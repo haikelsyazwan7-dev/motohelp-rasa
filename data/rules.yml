@@ -1,0 +1,212 @@
+version: "3.1"
+
+rules:
+
+- rule: Start chatbot
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- rule: Say goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- rule: Fallback rule
+  steps:
+    - intent: nlu_fallback
+    - action: utter_fallback
+
+
+# CATEGORY ROUTES
+- rule: Engine category
+  steps:
+    - intent: category_engine
+    - action: utter_category_engine
+
+- rule: Brake category
+  steps:
+    - intent: category_brake
+    - action: utter_category_brake
+
+- rule: Tire category
+  steps:
+    - intent: category_tire
+    - action: utter_category_tire
+
+- rule: Electrical category
+  steps:
+    - intent: category_electrical
+    - action: utter_category_electrical
+
+- rule: Fuel category
+  steps:
+    - intent: category_fuel
+    - action: utter_category_fuel
+
+- rule: Transmission category
+  steps:
+    - intent: category_transmission
+    - action: utter_category_transmission
+
+- rule: Control category
+  steps:
+    - intent: category_control_chassis
+    - action: utter_category_control_chassis
+
+- rule: Suspension category
+  steps:
+    - intent: category_suspension
+    - action: utter_category_suspension
+
+# ISSUE ROUTES
+- rule: Engine issue
+  steps:
+    - intent: issue_engine_not_start
+    - action: utter_issue_engine_not_start
+
+- rule: Engine issue
+  steps:
+    - intent: issue_engine_stalls
+    - action: utter_issue_engine_stalls
+
+- rule: Engine issue
+  steps:
+    - intent: issue_overheating_engine
+    - action: utter_issue_overheating_engine
+
+- rule: Engine issue
+  steps:
+    - intent: issue_engine_misfire
+    - action: utter_issue_engine_misfire
+
+- rule: Engine issue
+  steps:
+    - intent: issue_knocking_engine_noise
+    - action: utter_issue_knocking_engine_noise
+
+- rule: Engine issue
+  steps:
+    - intent: issue_engine_rough_idle
+    - action: utter_issue_engine_rough_idle
+
+- rule: Engine issue
+  steps:
+    - intent: issue_hard_start_morning
+    - action: utter_issue_hard_start_morning
+
+- rule: Engine issue
+  steps:
+    - intent: issue_engine_power_loss_uphill
+    - action: utter_issue_engine_power_loss_uphill
+
+- rule: Engine issue
+  steps:
+    - intent: issue_water_in_engine
+    - action: utter_issue_water_in_engine
+
+- rule: Brake issue
+  steps:
+    - intent: issue_brake_not_working
+    - action: utter_issue_brake_not_working
+
+- rule: Brake issue
+  steps:
+    - intent: issue_rear_brake_lock
+    - action: utter_issue_rear_brake_lock
+
+- rule: Tire issue
+  steps:
+    - intent: issue_flat_tire
+    - action: utter_issue_flat_tire
+
+- rule: Tire issue
+  steps:
+    - intent: issue_excessive_vibration
+    - action: utter_issue_excessive_vibration
+
+
+- rule: Electrical issue
+  steps:
+    - intent: issue_battery_dies
+    - action: utter_issue_battery_dies
+
+- rule: Electrical issue
+  steps:
+    - intent: issue_light_not_working
+    - action: utter_issue_light_not_working
+
+- rule: Electrical issue
+  steps:
+    - intent: issue_speedometer_not_working
+    - action: utter_issue_speedometer_not_working
+
+- rule: Electrical issue
+  steps:
+    - intent: issue_side_stand_sensor
+    - action: utter_issue_side_stand_sensor
+
+- rule: Fuel issue
+  steps:
+    - intent: issue_fuel_leak
+    - action: utter_issue_fuel_leak
+
+- rule: Fuel issue
+  steps:
+    - intent: issue_fuel_gauge_problem
+    - action: utter_issue_fuel_gauge_problem
+
+- rule: Transmission issue
+  steps:
+    - intent: issue_chain_problem
+    - action: utter_issue_chain_problem
+
+- rule: Transmission issue
+  steps:
+    - intent: issue_gear_shift_problem
+    - action: utter_issue_gear_shift_problem
+
+- rule: Transmission issue
+  steps:
+    - intent: issue_clutch_slipping
+    - action: utter_issue_clutch_slipping
+
+- rule: Transmission issue
+  steps:
+    - intent: issue_cvt_problem
+    - action: utter_issue_cvt_problem
+
+
+- rule: Control issue
+  steps:
+    - intent: issue_throttle_stuck
+    - action: utter_issue_throttle_stuck
+
+- rule: Control issue
+  steps:
+    - intent: issue_handlebar_misaligned
+    - action: utter_issue_handlebar_misaligned
+
+- rule: Control issue
+  steps:
+    - intent: issue_loose_parts
+    - action: utter_issue_loose_parts
+
+
+
+- rule: Suspension issue
+  steps:
+    - intent: issue_front_suspension_soft
+    - action: utter_issue_front_suspension_soft
+
+- rule: Suspension issue
+  steps:
+    - intent: issue_rear_suspension_hard
+    - action: utter_issue_rear_suspension_hard
+
+
+- rule: Safety issue
+  steps:
+    - intent: issue_burning_smell
+    - action: utter_issue_burning_smell
+

@@ -1,0 +1,271 @@
+version: "3.1"
+
+nlu:
+
+# =========================
+# BASIC
+# =========================
+- intent: greet
+  examples: |
+    - hi
+    - hello
+    - start
+    - open chatbot
+    - hey motohelp
+
+- intent: goodbye
+  examples: |
+    - bye
+    - exit
+    - quit
+    - thank you
+    - goodbye   
+    - ok
+
+# =========================
+# FALLBACK
+# =========================
+- intent: nlu_fallback
+  examples: |
+    - idk
+    - not sure
+    - help
+    - random text
+    - something wrong
+    - bike feels weird
+
+
+# =========================
+# CATEGORY SELECTION
+# =========================
+- intent: category_engine
+  examples: |
+    - engine
+    - engine problem
+    - engine issue
+
+- intent: category_brake
+  examples: |
+    - brake
+    - brake problem
+    - braking issue
+
+- intent: category_tire
+  examples: |
+    - tire
+    - tyre
+    - wheel problem
+
+- intent: category_electrical
+  examples: |
+    - electrical
+    - electrical problem
+    - battery issue
+    - wiring issue
+
+- intent: category_fuel
+  examples: |
+    - fuel
+    - petrol problem
+    - gas issue
+
+- intent: category_transmission
+  examples: |
+    - transmission
+    - gear problem
+    - clutch problem
+    - cvt
+
+- intent: category_suspension
+  examples: |
+    - suspension
+    - shock problem
+    - fork problem
+
+- intent: category_control_chassis
+  examples: |
+    - control
+    - steering
+    - chassis
+    - handlebar
+
+# =========================
+# ENGINE ISSUES
+# =========================
+- intent: issue_engine_not_start
+  examples: |
+    - engine will not start
+    - bike not starting
+    - engine does not crank
+    - clicking sound
+    - dashboard lights dim
+
+- intent: issue_engine_stalls
+  examples: |
+    - engine stalls
+    - bike dies while riding
+    - Engine cuts off suddenly
+    - Bike jerks then stops
+
+- intent: issue_overheating_engine
+  examples: |
+    - engine overheating
+    - engine too hot
+    - Engine very hot
+    - Burning smell
+    - Power loss
+
+- intent: issue_engine_misfire
+  examples: |
+    - engine jerking
+    - engine misfiring
+    - Uneven engine sound
+
+- intent: issue_knocking_engine_noise
+  examples: |
+    - knocking engine sound
+    - ticking noise engine
+
+- intent: issue_engine_rough_idle
+  examples: |
+    - engine rough idle
+    - shaking at traffic light
+
+- intent: issue_hard_start_morning
+  examples: |
+    - hard start morning
+    - hard to start when cold
+
+- intent: issue_engine_power_loss_uphill
+  examples: |
+    - engine weak uphill
+    - power loss uphill
+
+- intent: issue_water_in_engine
+  examples: |
+    - water in engine
+    - engine problem after flood
+
+# =========================
+# BRAKE ISSUES
+# =========================
+- intent: issue_brake_not_working
+  examples: |
+    - brake not working
+    - weak brake
+
+- intent: issue_rear_brake_lock
+  examples: |
+    - rear brake locking
+    - rear wheel skids
+
+# =========================
+# TIRE & WHEEL
+# =========================
+- intent: issue_flat_tire
+  examples: |
+    - flat tire
+    - puncture
+
+- intent: issue_excessive_vibration
+  examples: |
+    - excessive vibration
+    - handlebar shaking
+
+# =========================
+# ELECTRICAL ISSUES
+# =========================
+- intent: issue_battery_dies
+  examples: |
+    - battery died
+    - no power while riding
+
+- intent: issue_light_not_working
+  examples: |
+    - headlight not working
+    - signal not working
+
+- intent: issue_speedometer_not_working
+  examples: |
+    - speedometer not working
+    - speed shows zero
+
+- intent: issue_side_stand_sensor
+  examples: |
+    - side stand sensor problem
+    - engine cuts off in gear
+
+# =========================
+# FUEL ISSUES
+# =========================
+- intent: issue_fuel_leak
+  examples: |
+    - fuel leaking
+    - petrol smell
+
+- intent: issue_fuel_gauge_problem
+  examples: |
+    - fuel gauge wrong
+    - fuel meter problem
+
+# =========================
+# TRANSMISSION / DRIVE
+# =========================
+- intent: issue_chain_problem
+  examples: |
+    - chain loose
+    - chain noise
+
+- intent: issue_gear_shift_problem
+  examples: |
+    - gear stuck
+    - hard to shift gear
+
+- intent: issue_clutch_slipping
+  examples: |
+    - clutch slipping
+    - engine revs but slow
+
+- intent: issue_cvt_problem
+  examples: |
+    - cvt slipping
+    - scooter no power
+
+# =========================
+# CONTROL / CHASSIS
+# =========================
+- intent: issue_throttle_stuck
+  examples: |
+    - throttle stuck
+    - throttle hard to turn
+
+- intent: issue_handlebar_misaligned
+  examples: |
+    - handlebar not straight
+    - bike pulls to one side
+
+- intent: issue_loose_parts
+  examples: |
+    - loose bolt
+    - rattling noise
+
+# =========================
+# SUSPENSION
+# =========================
+- intent: issue_front_suspension_soft
+  examples: |
+    - front suspension soft
+    - front bouncy
+
+- intent: issue_rear_suspension_hard
+  examples: |
+    - rear suspension hard
+    - uncomfortable rear ride
+
+# =========================
+# SAFETY / SMELL
+# =========================
+- intent: issue_burning_smell
+  examples: |
+    - burning smell
+    - rubber smell

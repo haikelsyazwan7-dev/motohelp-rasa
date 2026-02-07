@@ -1,0 +1,856 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+
+  - nlu_fallback
+
+  # Categories
+  - category_engine
+  - category_brake
+  - category_tire
+  - category_electrical
+  - category_fuel
+  - category_transmission
+  - category_suspension
+  - category_control_chassis
+
+  # Engine issues
+  - issue_engine_not_start
+  - issue_engine_stalls
+  - issue_overheating_engine
+  - issue_engine_misfire
+  - issue_knocking_engine_noise
+  - issue_engine_rough_idle
+  - issue_hard_start_morning
+  - issue_engine_power_loss_uphill
+  - issue_water_in_engine
+
+  # Brake
+  - issue_brake_not_working
+  - issue_rear_brake_lock
+
+  # Tire / wheel
+  - issue_flat_tire
+  - issue_excessive_vibration
+
+  # Electrical
+  - issue_battery_dies
+  - issue_light_not_working
+  - issue_speedometer_not_working
+  - issue_side_stand_sensor
+
+  # Fuel
+  - issue_fuel_leak
+  - issue_fuel_gauge_problem
+
+  # Transmission
+  - issue_chain_problem
+  - issue_gear_shift_problem
+  - issue_clutch_slipping
+  - issue_cvt_problem
+
+  # Control / chassis
+  - issue_throttle_stuck
+  - issue_handlebar_misaligned
+  - issue_loose_parts
+
+  # Suspension
+  - issue_front_suspension_soft
+  - issue_rear_suspension_hard
+
+  # Safety
+  - issue_burning_smell
+
+responses:
+
+# =========================
+# START
+# =========================
+  utter_greet:
+    - text: |
+        Hi rider 👋  
+        What problem are you facing?
+      buttons:
+        - title: "🔧 Engine"
+          payload: "/category_engine"
+        - title: "🛑 Brake"
+          payload: "/category_brake"
+        - title: "🛞 Tire"
+          payload: "/category_tire"
+        - title: "⚡ Electrical"
+          payload: "/category_electrical"
+        - title: "⛽ Fuel"
+          payload: "/category_fuel"
+        - title: "⚙️ Transmission"
+          payload: "/category_transmission"
+        - title: "🧭 Control / Chassis"
+          payload: "/category_control_chassis"
+        - title: "🛠  Suspension"
+          payload: "/category_suspension"
+
+  utter_goodbye:
+    - text: |
+        Ride safe! 🏍️
+        If you need help again, just message me.
+
+  utter_fallback:
+    - text: |
+        Sorry, I’m not sure about that yet 😅  
+        Please choose one of the categories below to continue.
+      buttons:
+        - title: "🔧 Engine"
+          payload: "/category_engine"
+        - title: "🛑 Brake"
+          payload: "/category_brake"
+        - title: "🛞 Tire"
+          payload: "/category_tire"
+        - title: "⚡ Electrical"
+          payload: "/category_electrical"
+        - title: "⛽ Fuel"
+          payload: "/category_fuel"
+        - title: "⚙️ Transmission"
+          payload: "/category_transmission"
+        - title: "🧭 Control / Chassis"
+          payload: "/category_control_chassis"
+        - title: "🛠  Suspension"
+          payload: "/category_suspension"
+
+
+# =========================
+# CATEGORY → ISSUE LIST
+# =========================
+  utter_category_engine:
+    - text: "Choose engine issue:"
+      buttons:
+        - title: "Engine Will Not Start"
+          payload: "/issue_engine_not_start"
+        - title: "Engine Stalls While Riding"
+          payload: "/issue_engine_stalls"
+        - title: "Overheating Engine"
+          payload: "/issue_overheating_engine"
+        - title: "Engine Misfiring / Jerking"
+          payload: "/issue_engine_misfire"
+        - title: "Knocking / Ticking Noise"
+          payload: "/issue_knocking_engine_noise"
+        - title: "Engine Rough at Idle"
+          payload: "/issue_engine_rough_idle"
+        - title: "Hard to Start (Morning)"
+          payload: "/issue_hard_start_morning"
+        - title: "Power Loss Uphill"
+          payload: "/issue_engine_power_loss_uphill"
+        - title: "Water in Engine"
+          payload: "/issue_water_in_engine"
+
+  utter_category_brake:
+    - text: "Choose brake issue:"
+      buttons:
+        - title: "Brake Not Working Properly"
+          payload: "/issue_brake_not_working"
+        - title: "Rear Brake Locking Easily"
+          payload: "/issue_rear_brake_lock"
+
+  utter_category_tire:
+    - text: "Choose tire / wheel issue:"
+      buttons:
+        - title: "Flat Tire / Puncture"
+          payload: "/issue_flat_tire"
+        - title: "Excessive Vibration"
+          payload: "/issue_excessive_vibration"
+
+  utter_category_electrical:
+    - text: "Choose electrical issue:"
+      buttons:
+        - title: "Battery Dies While Riding"
+          payload: "/issue_battery_dies"
+        - title: "Headlight / Signal Not Working"
+          payload: "/issue_light_not_working"
+        - title: "Speedometer Not Working"
+          payload: "/issue_speedometer_not_working"
+        - title: "Side Stand Sensor Problem"
+          payload: "/issue_side_stand_sensor"
+
+  utter_category_fuel:
+    - text: "Choose fuel issue:"
+      buttons:
+        - title: "Fuel Leak"
+          payload: "/issue_fuel_leak"
+        - title: "Fuel Gauge Incorrect"
+          payload: "/issue_fuel_gauge_problem"
+
+  utter_category_transmission:
+    - text: "Choose transmission issue:"
+      buttons:
+        - title: "Chain Problem"
+          payload: "/issue_chain_problem"
+        - title: "Gear Cannot Shift"
+          payload: "/issue_gear_shift_problem"
+        - title: "Clutch Slipping"
+          payload: "/issue_clutch_slipping"
+        - title: "Scooter CVT Slipping"
+          payload: "/issue_cvt_problem"
+
+  utter_category_control_chassis:
+    - text: "Choose control / chassis issue:"
+      buttons:
+        - title: "Throttle Stuck"
+          payload: "/issue_throttle_stuck"
+        - title: "Handlebar Misaligned"
+          payload: "/issue_handlebar_misaligned"
+        - title: "Loose or Missing Parts"
+          payload: "/issue_loose_parts"
+        - title: "Burning Smell"
+          payload: "/issue_burning_smell"
+
+  utter_category_suspension:
+    - text: "Choose suspension issue:"
+      buttons:
+        - title: "Front Suspension Too Soft"
+          payload: "/issue_front_suspension_soft"
+        - title: "Rear Suspension Too Hard"
+          payload: "/issue_rear_suspension_hard"
+
+# =========================
+# ISSUE → FULL SOLUTION (EXAMPLE SHOWN)
+# =========================
+  utter_issue_engine_not_start:
+    - text: |
+        🔧 *Engine Will Not Start*
+
+        Symptoms:
+        • Engine does not crank
+        • Clicking sound
+        • Dashboard lights dim
+
+        Try This:
+        1. Check fuel
+        2. Turn ignition OFF → ON
+        3. Check side stand fully up
+        4. Pull clutch and press start
+        5. Slightly twist throttle
+        6. Try again after 10 seconds
+
+        ⚠️ Severity: Medium
+
+        ❌ Stop riding & go to workshop if:
+        • No response after all checks
+        • Burning smell or sparks
+        • Battery fully dead
+
+  utter_issue_engine_stalls:
+    - text: |
+        🔧 *Engine Stalls While Riding*
+
+        Symptoms:
+        • Engine cuts off suddenly
+        • Bike jerks then stops
+        • Happens at low speed
+
+        Try This:
+        1. Turn key OFF
+        2. Check fuel level
+        3. Let engine cool 5–10 minutes
+        4. Restart engine
+        5. Slightly open throttle when starting
+
+        ⚠️ Severity: Medium
+
+        ❌ Go to workshop if:
+        • Stalling happens repeatedly
+        • Engine dies at high speed
+        • Check engine light stays ON
+
+  utter_issue_overheating_engine:
+    - text: |
+        🔥 *Overheating Engine*
+
+        Symptoms:
+        • Engine very hot
+        • Burning smell
+        • Power loss
+
+        Try This:
+        1. Turn OFF engine
+        2. Let bike cool 15–20 minutes
+        3. Open radiator cap slowly
+        4. Add water if low
+        5. Restart when temperature drops
+
+        ⚠️ Severity: High
+
+        ❌ Go to workshop if:
+        • Overheating repeats
+        • Oil leaking
+        • Engine knocking
+
+  utter_issue_engine_misfire:
+    - text: |
+        🔧 *Engine Misfiring / Jerking*
+
+        Symptoms:
+        • Jerking during acceleration
+        • Uneven engine sound
+        • Power loss
+
+        Try This:
+        1. Turn engine OFF
+        2. Check spark plug cable
+        3. Push cable firmly
+        4. Restart gently
+        5. Let idle stabilize
+
+        ⚠️ Severity: Medium
+
+        ❌ Go to workshop if:
+        • Jerking worsens
+        • Engine stalls
+        • Warning light ON
+
+  utter_issue_knocking_engine_noise:
+    - text: |
+        🔧 *Knocking / Ticking Engine Noise*
+
+        Symptoms:
+        • Knocking sound
+        • Noise increases with RPM
+
+        Try This:
+        1. Turn engine OFF
+        2. Check engine oil level
+        3. Add oil if low
+        4. Restart engine
+        5. Listen for noise change
+
+        ⚠️ Severity: High
+
+        ❌ Go to workshop if:
+        • Noise continues
+        • Oil light ON
+        • Power loss
+
+  utter_issue_engine_rough_idle:
+    - text: |
+        🔧 *Engine Runs Rough at Idle*
+
+        Symptoms:
+        • Shaking at traffic light
+        • RPM fluctuates
+
+        Try This:
+        1. Restart engine
+        2. Let engine warm 1–2 min
+        3. Adjust idle screw slightly
+        4. Blip throttle gently
+        5. Observe idle stability
+
+        ⚠️ Severity: Low–Medium
+
+        ❌ Go to workshop if:
+        • Engine stalls repeatedly
+        • Idle unstable while riding
+
+  utter_issue_hard_start_morning:
+    - text: |
+        🔧 *Hard to Start in the Morning*
+
+        Symptoms:
+        • Multiple start attempts
+        • Engine starts then dies
+
+        Try This:
+        1. Use choke (if available)
+        2. Turn key ON
+        3. Wait few seconds
+        4. Press starter once
+        5. Let engine warm
+
+        ⚠️ Severity: Low
+
+        ❌ Go to workshop if:
+        • Starting worsens daily
+        • Battery weak often
+
+  utter_issue_engine_power_loss_uphill:
+    - text: |
+        🔧 *Engine Loses Power Uphill*
+
+        Symptoms:
+        • Weak climbing
+        • Needs more throttle
+
+        Try This:
+        1. Turn engine OFF
+        2. Check air filter blockage
+        3. Check fuel hose kink
+        4. Restart engine
+        5. Test throttle response
+
+        ⚠️ Severity: Low–Medium
+
+        ❌ Go to workshop if:
+        • Power loss sudden
+        • Engine overheats
+
+  utter_issue_water_in_engine:
+    - text: |
+        🔧 *Water in Engine*
+
+        Symptoms:
+        • Hard to start after rain
+        • Rough idle
+
+        Try This:
+        1. DO NOT force start
+        2. Remove spark plug
+        3. Crank engine to expel water
+        4. Let bike dry 20–30 minutes
+        5. Reinstall and restart gently
+
+        ⚠️ Severity: High
+
+        ❌ Go to workshop if:
+        • Engine refuses to start
+        • Knocking sound appears
+
+  utter_issue_brake_not_working:
+    - text: |
+        🛑 *Brake Not Working Properly*
+
+        Symptoms:
+        • Soft brake lever
+        • Long stopping distance
+
+        Try This:
+        1. Squeeze brake lever repeatedly
+        2. Check brake fluid level
+        3. Inspect hose for leaks
+        4. Let brakes cool
+        5. Test brake resistance
+
+        ⚠️ Severity: High
+
+        ❌ Go to workshop if:
+        • Brake lever pulls fully
+        • No braking power
+
+  utter_issue_rear_brake_lock:
+    - text: |
+        🛑 *Rear Brake Locking Easily*
+
+        Symptoms:
+        • Rear wheel skids
+        • Sudden stop
+
+        Try This:
+        1. Release brake fully
+        2. Let brake cool
+        3. Check pedal free play
+        4. Pump brake gently
+        5. Test wheel rotation
+        6. Reduce rear brake use
+        7. Use front brake gently
+        8. Ride slower
+
+        ⚠️ Severity: Medium
+
+        ❌ Go to workshop if:
+        • Rear wheel locks suddenly
+        • Bike unstable
+
+  utter_issue_flat_tire:
+    - text: |
+        🛞 *Flat Tire / Puncture*
+
+        Symptoms:
+        • Wobbling
+        • Heavy steering
+        • Hissing sound
+
+        Try This:
+        1. Inspect tire surface
+        2. Check nail or sharp object
+        3. Remove object if small
+        4. Inflate with pump (if any)
+        5. Check pressure manually
+
+        ⚠️ Severity: High
+
+        ❌ Go to workshop if:
+        • Tire fully flat
+        • Front tire punctured
+
+  utter_issue_excessive_vibration:
+    - text: |
+        🛞 *Excessive Vibration*
+
+        Symptoms:
+        • Handlebar shaking
+        • Mirror vibrating
+
+        Try This:
+        1. Spin wheel by hand
+        2. Check bent rim
+        3. Check loose wheel nut
+        4. Tighten visible bolts
+        5. Spin again to test
+
+        ⚠️ Severity: Medium
+
+        ❌ Go to workshop if:
+        • Vibration increases
+        • Steering unstable
+
+  utter_issue_battery_dies:
+    - text: |
+        ⚡ *Battery Dies While Riding*
+
+        Symptoms:
+        • Dashboard off
+        • Headlight dim
+
+        Try This:
+        1. Turn ignition OFF
+        2. Check battery terminal tightness
+        3. Clean corrosion if visible
+        4. Push terminals firmly
+        5. Try start engine
+
+        ⚠️ Severity: Medium
+
+        ❌ Go to workshop if:
+        • Bike dies again
+        • No lights at all
+
+  utter_issue_light_not_working:
+    - text: |
+        ⚡ *Headlight / Signal Not Working*
+
+        Symptoms:
+        • No headlight
+        • Signal not blinking
+
+        Try This:
+        1. Check light switch
+        2. Check bulb seating
+        3. Reinsert bulb
+        4. Check fuse visually
+        5. Turn light ON again
+        6. Ride slowly in bright area
+
+        ⚠️ Severity: Low–Medium
+
+        ❌ Go to workshop if:
+        • Riding at night
+        • Multiple lights fail
+
+  utter_issue_speedometer_not_working:
+    - text: |
+        ⚡ *Speedometer Not Working*
+
+        Symptoms:
+        • Speed shows zero
+        • Odometer not moving
+
+        Try This:
+        1. Check speedo cable
+        2. Push cable into slot
+        3. Inspect loose wiring
+        4. Restart engine
+        5. Observe meter movement
+
+        ⚠️ Severity: Low
+
+        ❌ Go to workshop if:
+        • Riding fast roads
+        • Other electrical issues appear
+
+  utter_issue_side_stand_sensor:
+    - text: |
+        ⚡ *Side Stand Sensor Problem*
+
+        Symptoms:
+        • Engine cuts off in gear
+        • Starts only in neutral
+
+        Try This:
+        1. Fold stand fully
+        2. Clean sensor area
+        3. Move stand up/down
+        4. Hold stand up
+        5. Restart engine
+
+        ⚠️ Severity: Medium
+
+        ❌ Go to workshop if:
+        • Engine cuts repeatedly
+        • Unsafe in traffic
+
+  utter_issue_fuel_leak:
+    - text: |
+        ⛽ *Fuel Leak*
+
+        Symptoms:
+        • Petrol smell
+        • Fuel dripping
+
+        Try This:
+        1. Turn fuel valve OFF
+        2. Wipe leaking area
+        3. Tighten hose clamp
+        4. Turn valve ON slowly
+        5. Observe leakage
+
+        ⚠️ Severity: High
+
+        ❌ Go to workshop if:
+        • Fuel dripping continuously
+        • Fire risk present
+
+  utter_issue_fuel_gauge_problem:
+    - text: |
+        ⛽ *Fuel Gauge Incorrect*
+
+        Symptoms:
+        • Gauge drops suddenly
+        • Stuck on empty/full
+
+        Try This:
+        1. Turn ignition OFF
+        2. Restart bike
+        3. Shake bike gently
+        4. Observe gauge movement
+        5. Reset trip meter
+
+        ⚠️ Severity: Low
+
+        ❌ Go to workshop if:
+        • Engine stalls with fuel
+        • Gauge erratic often
+
+  utter_issue_chain_problem:
+    - text: |
+        ⚙️ *Chain Problem*
+
+        Symptoms:
+        • Jerking
+        • Clicking noise
+        • Chain loose
+
+        Try This:
+        1. Inspect chain slack
+        2. Check dry chain
+        3. Apply chain lube
+        4. Rotate wheel slowly
+        5. Check chain alignment
+
+        ⚠️ Severity: Medium–High
+
+        ❌ Go to workshop if:
+        • Chain comes off
+        • Rear wheel locks
+
+  utter_issue_gear_shift_problem:
+    - text: |
+        ⚙️ *Gear Cannot Shift Properly*
+
+        Symptoms:
+        • Gear stuck
+        • Hard shifting
+
+        Try This:
+        1. Turn engine OFF
+        2. Shift gears manually
+        3. Rock bike slightly
+        4. Pull clutch repeatedly
+        5. Restart and test
+
+        ⚠️ Severity: Medium
+
+        ❌ Go to workshop if:
+        • Gear stuck permanently
+        • Grinding sound
+
+  utter_issue_clutch_slipping:
+    - text: |
+        ⚙️ *Clutch Slipping*
+
+        Symptoms:
+        • Engine revs but slow
+        • Burning smell
+
+        Try This:
+        1. Check clutch cable free play
+        2. Adjust cable slightly
+        3. Restart engine
+        4. Engage gear slowly
+        5. Observe clutch grip
+        6. Reduce throttle
+        7. Avoid heavy load
+        8. Ride steadily
+
+        ⚠️ Severity: Medium
+
+        ❌ Go to workshop if:
+        • Bike barely moves
+        • Smell worsens
+
+  utter_issue_cvt_problem:
+    - text: |
+        ⚙️ *Scooter CVT Slipping*
+
+        Symptoms:
+        • Engine revs, bike slow
+        • Burning rubber smell
+
+        Try This:
+        1. Turn engine OFF
+        2. Check CVT cover heat
+        3. Let CVT cool
+        4. Restart engine
+        5. Test throttle response
+        6. Reduce throttle
+        7. Avoid hard acceleration
+
+        ⚠️ Severity: Medium–High
+
+        ❌ Go to workshop if:
+        • Scooter won’t move
+        • Loud CVT noise
+
+  utter_issue_throttle_stuck:
+    - text: |
+        🚨 *Throttle Stuck*
+
+        Symptoms:
+        • High RPM
+        • Throttle not returning
+
+        Try This:
+        1. Turn engine OFF
+        2. Twist throttle manually
+        3. Check cable routing
+        4. Spray lubricant (if any)
+        5. Ensure smooth return
+        6. Do NOT force throttle
+
+        ⚠️ Severity: High
+
+        ❌ Go to workshop if:
+        • Throttle stays stuck
+        • Engine revs uncontrollably
+
+  utter_issue_handlebar_misaligned:
+    - text: |
+        🧭 *Handlebar Misaligned*
+
+        Symptoms:
+        • Handlebar not straight
+        • Bike pulls one side
+
+        Try This:
+        1. Inspect handle clamp bolts
+        2. Align handle visually
+        3. Tighten bolts evenly
+        4. Check steering movement
+        5. Reconfirm alignment
+        6. Ride at low speed
+
+        ⚠️ Severity: Medium
+
+        ❌ Go to workshop if:
+        • Steering hard to control
+        • Handlebar bent
+
+  utter_issue_loose_parts:
+    - text: |
+        🧭 *Loose or Missing Parts*
+
+        Symptoms:
+        • Rattling noise
+        • Shaking mirror
+
+        Try This:
+        1. Locate rattling part
+        2. Tighten bolts by hand
+        3. Secure with cable tie
+        4. Shake part lightly
+        5. Recheck tightness
+        6. Remove loose part if unsafe
+        7. Ride slowly
+
+        ⚠️ Severity: Low
+
+        ❌ Go to workshop if:
+        • Part may fall off
+        • Affects steering/brake
+
+  utter_issue_front_suspension_soft:
+    - text: |
+        🛠 *Front Suspension Too Soft*
+
+        Symptoms:
+        • Front dives when braking
+        • Bouncy ride
+
+        Try This:
+        1. Check oil leakage
+        2. Press suspension down
+        3. Observe rebound
+        4. Adjust preload (if any)
+        5. Reduce load
+        6. Avoid sudden braking
+        7. Ride slowly
+
+        ⚠️ Severity: Medium
+
+        ❌ Go to workshop if:
+        • Oil leaking
+        • Steering unsafe
+
+  utter_issue_rear_suspension_hard:
+    - text: |
+        🛠 *Rear Suspension Too Hard*
+
+        Symptoms:
+        • Very stiff ride
+        • Poor traction
+
+        Try This:
+        1. Check preload setting
+        2. Adjust softer setting
+        3. Press seat downward
+        4. Observe rebound
+        5. Retest firmness
+        6. Reduce speed
+        7. Avoid potholes
+        8. Reduce load
+
+        ⚠️ Severity: Low–Medium
+
+        ❌ Go to workshop if:
+        • Rear wheel bouncing
+        • Loss of control
+
+  utter_issue_burning_smell:
+    - text: |
+        🚨 *Burning Smell While Riding*
+
+        Symptoms:
+        • Burning or rubber smell
+        • Heat near engine
+
+        Try This:
+        1. Turn engine OFF
+        2. Let bike cool
+        3. Inspect wiring & hoses
+        4. Check for smoke
+        5. Remove debris
+        6. Restart and observe
+
+        ⚠️ Severity: High
+
+        ❌ Go to workshop if:
+        • Smoke visible
+        • Smell continues
+        • Electrical smell

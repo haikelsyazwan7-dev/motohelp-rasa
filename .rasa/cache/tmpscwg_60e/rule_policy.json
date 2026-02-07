@@ -1,0 +1,34 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"engine_stall\"}}]": "utter_engine_stall",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"engine_stall\"}}, {\"prev_action\": {\"action_name\": \"utter_engine_stall\"}, \"user\": {\"intent\": \"engine_stall\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"choose_engine\"}}]": "utter_engine_menu",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"choose_engine\"}}, {\"prev_action\": {\"action_name\": \"utter_engine_menu\"}, \"user\": {\"intent\": \"choose_engine\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"engine_not_start\"}}]": "utter_engine_not_start",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"engine_not_start\"}}, {\"prev_action\": {\"action_name\": \"utter_engine_not_start\"}, \"user\": {\"intent\": \"engine_not_start\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"overheating_engine\"}}]": "utter_overheating_engine",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"overheating_engine\"}}, {\"prev_action\": {\"action_name\": \"utter_overheating_engine\"}, \"user\": {\"intent\": \"overheating_engine\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}]": "utter_greet",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}, {\"prev_action\": {\"action_name\": \"utter_greet\"}, \"user\": {\"intent\": \"greet\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent session_start",
+      "predicting default action with intent back",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}, {\"prev_action\": {\"action_name\": \"utter_greet\"}, \"user\": {\"intent\": \"greet\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"engine_not_start\"}}, {\"prev_action\": {\"action_name\": \"utter_engine_not_start\"}, \"user\": {\"intent\": \"engine_not_start\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"choose_engine\"}}, {\"prev_action\": {\"action_name\": \"utter_engine_menu\"}, \"user\": {\"intent\": \"choose_engine\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"overheating_engine\"}}, {\"prev_action\": {\"action_name\": \"utter_overheating_engine\"}, \"user\": {\"intent\": \"overheating_engine\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"engine_stall\"}}]",
+      "predicting default action with intent restart",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"engine_not_start\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"overheating_engine\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"choose_engine\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"engine_stall\"}}, {\"prev_action\": {\"action_name\": \"utter_engine_stall\"}, \"user\": {\"intent\": \"engine_stall\"}}]"
+    ]
+  }
+}

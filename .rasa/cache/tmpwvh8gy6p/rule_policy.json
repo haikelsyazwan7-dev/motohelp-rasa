@@ -1,0 +1,22 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"unknown\"}}]": "utter_unknown",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"unknown\"}}, {\"prev_action\": {\"action_name\": \"utter_unknown\"}, \"user\": {\"intent\": \"unknown\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"engine_not_start\"}}]": "utter_engine_not_start_help",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"engine_not_start\"}}, {\"prev_action\": {\"action_name\": \"utter_engine_not_start_help\"}, \"user\": {\"intent\": \"engine_not_start\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"unknown\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"engine_not_start\"}}, {\"prev_action\": {\"action_name\": \"utter_engine_not_start_help\"}, \"user\": {\"intent\": \"engine_not_start\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"unknown\"}}, {\"prev_action\": {\"action_name\": \"utter_unknown\"}, \"user\": {\"intent\": \"unknown\"}}]",
+      "predicting default action with intent back",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"engine_not_start\"}}]",
+      "predicting default action with intent session_start",
+      "predicting default action with intent restart"
+    ]
+  }
+}
